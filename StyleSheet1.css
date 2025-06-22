@@ -1,0 +1,915 @@
+﻿:root {
+    /* Colors */
+    --background-color: #D1CEC7;
+    --dropdown-color: #fdf6f0;
+    --button-color: #50686c;
+    --hover-color: #291f15;
+    --header-text-color: #291f15;
+    --text-color: #291f15;
+    --button-text-color: #291f15;
+    --hover-text-color: #D1CEC7;
+    --dark-hover-text-color: #e0831f;
+    /* Brand accents */
+    --color-1: #e60000;
+    --color-2: #e4e600;
+    --color-3: #00e0c4;
+    /* Typography */
+    --font-family: 'Atma', cursive;
+    --font-small: 18px;
+    --font-base: 20px;
+    --font-medium: 23px;
+    --font-large: 28px;
+    --font-heading: 38px;
+    --font-mega: 85px;
+    /* Layout & spacing */
+    --padding: 20px;
+    --gap: 10px;
+    --border-radius: 15px;
+    --main-width: 1200px;
+    --full-width: 1500px;
+    --wide-width: 90%;
+    --max-width: 1000px;
+    /* Elements */
+    --big-header-height: 600px;
+    --header-height: 300px;
+    --carousel-height: 500px;
+    --gallery-width: 300px;
+    --gallery-height: 250px;
+    /* Button sizing */
+    --btn-width: 200px;
+    --btn-height: 50px;
+    --square-size: 50px;
+    --min-btn-width: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    position: relative;
+}
+body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center center;
+        opacity: 0.5;
+        z-index: -2; 
+        filter: brightness(0.7);
+}
+body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0; 
+        width: 100%;
+        height: 100%;
+        background-color: rgba(163, 162, 157, 0.3);
+        z-index: -1;
+        pointer-events: none;
+}       
+/*────────────────────────────────────────────────────
+  Headings & Text
+────────────────────────────────────────────────────*/
+header,
+.big-header {
+    position: relative;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.big-header {
+    height: var(--big-header-height);
+}
+header {
+    height: var(--header-height);
+}
+h1 {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    font-size: var(--font-mega);
+    color: var(--background-color);
+}        
+h2 {
+    font-size: var(--font-heading);
+    margin-bottom: var(--gap);
+    color: var(--header-text-color);
+}
+
+h3 {
+    font-size: var(--font-large);
+    margin-bottom: var(--gap);
+    color: inherit;
+}
+
+h4 {
+    font-size: var(--font-medium);
+    margin-bottom: var(--gap);
+    color: var(--header-text-color);
+}
+
+h5 {
+    font-size: var(--font-small);
+    margin-bottom: var(--gap);
+    color: var(--header-text-color);
+}
+
+p {
+    font-size: var(--font-medium);
+    margin-bottom: var(--gap);
+    line-height: 1.6;
+}
+.bold {
+    font-weight: bold;
+    margin: 5px;
+}
+.highlight {
+    color: var(--header-text-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+.highlight:hover {
+    color: var(--dark-hover-text-color);
+    font-weight: bold;
+}   
+/*────────────────────────────────────────────────────
+  Nav
+────────────────────────────────────────────────────*/
+nav {
+    position: absolute;
+    top: var(--padding);
+    left: var(--padding);
+    right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    font-size: var(--font-medium);
+    font-weight: bold;
+}
+
+.left,
+.right {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap);
+}
+/*────────────────────────────────────────────────────
+  Picktures
+────────────────────────────────────────────────────*/
+
+.pic1 {
+    background-image: url("picks_budapest/local.jpg");  
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+.pic2 {
+    background-image: url("map_3.jpg");  
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+.castle_2 {
+    background-image: url("picks_budapest/castle_2.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+.plane_2 {
+    background-image: url("plane_2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main_city {
+    background-image: url("main_city.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.change {
+    background-image: url("change.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.vienna_main {
+    background-image: url("vienna_main.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bratislava_main {
+    background-image: url("bratislava_main.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.img {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+    /* Hide the figcaption by default */
+    .img figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-base);
+        color: var(--hover-text-color);
+        background: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        opacity: 0;
+        padding: var(--gap);
+        box-sizing: border-box;
+        transition: opacity 0.3s ease;
+        pointer-events: none; /* So it doesn’t block hover */
+    }
+
+    .img:hover figcaption {
+        opacity: 1;
+        pointer-events: auto; /* Allow interaction if needed */
+    }
+
+    .img:hover {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: var(--hover-text-color); 
+}
+    .nav-item,
+    .norm-button,
+    a.norm-button,
+    .dropdown-item-main {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--btn-width);
+        height: var(--btn-height);
+        padding: var(--padding);
+        background: var(--button-color);
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        white-space: nowrap;
+        flex-shrink: 0;
+        opacity: 95%;
+    }
+.nav-item:hover,
+.norm-button:hover,
+a.norm-button:hover,
+.dropdown-item-main:hover {
+    background: var(--hover-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+}
+.home-button {
+    display: inline-flex;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    width: var(--square-size);
+    height: var(--square-size);
+    min-width: var(--min-btn-width);
+    background-color: var(--button-color);
+    background-image: url('home.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    opacity: 95%;
+}
+.home-button:hover {
+    background: var(--hover-color);
+    color: var(--hover-text-color);
+    transform: scale(1.05);
+    background-image: url('home_hover.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+/*────────────────────────────────────────────────────
+  Dropdowns
+────────────────────────────────────────────────────*/
+.dropdown, .dropdown-city {
+    position: relative;
+    color: var(--button-text-color);
+}
+.dropdown-menu {
+    transition: all 0.2s ease-in-out;
+    z-index: 10;display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    opacity: 80%;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+.dropdown-item, .dropdown-item-city {
+    
+    padding: var(--padding);
+    text-align: center;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.dropdown:hover .dropdown-menu {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(3, auto);
+}
+.dropdown-city:hover .dropdown-menu {
+    width: 200%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.dropdown-item:hover, .dropdown-item-city:hover {
+    background: var(--hover-color);
+    color: var(--hover-text-color);
+    transform: scale(1.05);
+}
+/*────────────────────────────────────────────────────
+  Size Content
+────────────────────────────────────────────────────*/
+.main {
+    padding: var(--padding) ;
+    max-width: var(--main-width);
+    margin: auto;
+    zoom: 0.9;
+}
+.trip-content {
+    max-width: var(--wide-width);
+    margin: 0 auto 0 300px;
+}
+.wide-content {
+    width: 99%;
+    padding: 0 0 0 var(--padding);
+}
+.medium-content {
+    width: 99%;
+    padding: 0 var(--padding);
+    zoom: 0.9;
+}
+.full-content {
+    width: 100%;
+    max-width: var(--full-width);
+    padding: 0 0 0 var(--padding);
+    margin: 0 0 0 auto;
+    zoom: 0.9;
+}
+.background {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding) var(--padding);
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-block-end: calc(var(--gap)*2);
+    position: relative;
+}
+
+/*────────────────────────────────────────────────────
+  Contact Content
+────────────────────────────────────────────────────*/
+.contact-block {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    max-width: var(--max-width);
+    margin: var(--gap) auto;
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--font-base);
+}
+.contact-content {
+    width: 100%;
+    padding: 0 var(--gap);
+}
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+    margin: var(--gap) 0;
+    flex-wrap: wrap;
+}
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: var(--gap);
+}
+.city-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    font-size: var(--font-medium);
+    color: var(--main-text-color);
+}
+.city-list-2 {
+    display: flow;
+    list-style: none;
+    font-size: var(--font-medium);
+    color: var(--main-text-color);
+}
+/*────────────────────────────────────────────────────
+  Trip Content
+────────────────────────────────────────────────────*/
+.trip-block {
+    width: 100%;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-block-end: var(--gap);
+}
+.trip-intro,
+.trip-description {
+    font-size: var(--font-medium);
+    color: #333;
+    margin: 0;
+}
+.trip-link:hover{
+    color: var(--dark-hover-text-color);
+}
+.city-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: var(--font-medium);
+}
+/*────────────────────────────────────────────────────
+  Gallery Content
+────────────────────────────────────────────────────*/
+.budapest-gallery {
+    display: grid;
+    grid-template-columns: minmax(120px, auto) 1fr minmax(120px, auto);
+    gap: var(--gap);
+    align-items: start;
+}
+/* ========================================================================
+   FREE GALLERY CONTAINER
+   ======================================================================== */
+.free-gallery {
+    display: grid;
+    grid-template-columns: 1fr minmax(120px, auto);
+    gap: var(--gap);
+    align-items: start;
+}
+/* TEXT SIDE */
+.gallery-text {
+    font-size: var(--font-medium);
+    line-height: 1.6;
+}
+.gallery-left,
+.gallery-right {
+    display: grid;
+    gap: var(--gap);
+}
+
+.gallery-left {
+    grid-template-columns: var(--gallery-width);
+    grid-auto-rows: var(--gallery-height) var(--gallery-width) var(--gallery-width);
+}
+
+.gallery-right {
+    grid-auto-rows: var(--gallery-height) var(--gallery-width) var(--gallery-width);
+    grid-template-columns: var(--gallery-width) var(--gallery-height);
+}
+    .gallery-right .placeholder,
+    .gallery-left .placeholder {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+        transform: scale(1);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+.gallery-right .placeholder::after,
+.gallery-left .placeholder::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-base);
+    color: var(--hover-text-color);
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: var(--gap);
+    box-sizing: border-box;
+}
+        .gallery-right .placeholder:hover::after,
+        .gallery-left .placeholder:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-right .placeholder:hover,
+        .gallery-left .placeholder:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+.color1 {
+    background-color: #ff6f61;
+}
+.color2 {
+    background-color: #6ec1e4;
+}
+.color3 {
+    background-color: #f4d35e;
+}
+/*────────────────────────────────────────────────────
+  Circle Content
+────────────────────────────────────────────────────*/
+.text-wrap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    min-height: 200px;
+    margin: auto;
+}
+.circle-photo {
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    float: right;
+    width: 50%;
+    aspect-ratio: 4 / 5;
+    -webkit-shape-outside: ellipse(100% 50% at 100% 50%);
+    clip-path: ellipse(100% 50% at 100% 50%);
+    background-color: var(--color-1);
+}
+/*────────────────────────────────────────────────────
+  Full Circle Content
+────────────────────────────────────────────────────*/
+.forth,
+.first,
+.second,
+.third {
+    width: 50%;
+    max-width: var(--wide-width);
+    aspect-ratio: 1 / 1;
+}
+.first {
+    float: left;
+    background-color: var(--color-2);
+    clip-path: circle(40% at 40% 40%);
+    -webkit-shape-outside: circle(40% at 45% 40%);
+}
+.second {
+    float: right;
+    background-color: var(--color-2);
+    clip-path: circle(45% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+}
+.third {
+    float: left;
+    background-color: var(--color-3);
+    -webkit-shape-outside: circle(40% at 45% 40%);
+    clip-path: circle(40% at 40% 40%);
+}
+.forth {
+    float: right;
+    background-color: var(--color-1);
+    clip-path: circle(30% at 70% 30%);
+    -webkit-shape-outside: circle(30% at 65% 30%);
+}
+/*────────────────────────────────────────────────────
+  Carousel Content
+────────────────────────────────────────────────────*/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    overflow-anchor: none;
+}
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--carousel-height);
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius);
+}
+.carousel-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+}
+    .carousel-nav label {
+        width: 12px;
+        height: 12px;
+        background: #223232;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+        user-select: none;
+    }
+.bottom {
+    margin-top: var(--padding);
+}
+
+.top {
+    margin-bottom: var(--padding);
+}
+/* for all -1 slides */
+input[id$="-1"]:checked ~ .carousel-slides,
+input[id="slide1"]:checked ~ .carousel-slides {
+    transform: translateX(0%);
+}
+/* for all -2 slides */
+input[id$="-2"]:checked ~ .carousel-slides,
+input[id="slide2"]:checked ~ .carousel-slides {
+    transform: translateX(-100%);
+}
+
+input[id$="-3"]:checked ~ .carousel-slides,
+input[id="slide3"]:checked ~ .carousel-slides {
+    transform: translateX(-200%);
+}
+
+input[id$="-4"]:checked ~ .carousel-slides,
+input[id="slide4"]:checked ~ .carousel-slides {
+    transform: translateX(-300%);
+}
+
+/* active */
+input[id$="-1"]:checked ~ .carousel-nav label[for$="-1"],
+input[id$="-2"]:checked ~ .carousel-nav label[for$="-2"],
+input[id$="-3"]:checked ~ .carousel-nav label[for$="-3"],
+input[id$="-4"]:checked ~ .carousel-nav label[for$="-4"],
+input[id="slide1"]:checked ~ .carousel-nav label[for="slide1"],
+input[id="slide2"]:checked ~ .carousel-nav label[for="slide2"],
+input[id="slide3"]:checked ~ .carousel-nav label[for="slide3"],
+input[id="slide4"]:checked ~ .carousel-nav label[for="slide4"] {
+    background: var(--dark-hover-text-color);
+}
+/*────────────────────────────────────────────────────
+  Things to do Content
+────────────────────────────────────────────────────*/
+.centr {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+}
+.centr > a {
+    position: relative;
+    display: block;
+    width: var(--gallery-width); 
+    height: var(--gallery-height);
+    flex-shrink: 0; 
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-left: var(--gap);
+}
+.centr .placeholder,
+.centr .text-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s ease, transform .3s ease;
+}
+.centr .placeholder {
+    opacity: 1;
+    transform: scale(1);
+}
+.centr .text-placeholder {
+    opacity: 0;
+    color: var(--hover-text-color);
+    font-size: var(--font-base);
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+.centr > a:hover .placeholder {
+    opacity: 0;
+    transform: scale(1.05);
+}
+.centr > a:hover .text-placeholder {
+    opacity: 1;
+}
+.photo-text {
+    transition: transform 0.3s;
+}
+.photo-text:hover {
+    transform: translateY(-5px);
+}
+    .photo-text .photo {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border-radius);
+        position: relative;
+        display: block;
+    }
+.to-do {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: var(--gap);
+}
+    .to-do > *:nth-child(-n+3) {
+        grid-row: 1;
+    }
+    .to-do > *:nth-child(n+4):nth-child(-n+6) {
+        grid-row: 2;
+    }
+/*────────────────────────────────────────────────────
+  Footer
+────────────────────────────────────────────────────*/
+footer {
+    background: var(--button-color);
+    color: var(--hover-text-color);
+    text-align: center;
+    padding: var(--padding);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+/*────────────────────────────────────────────────────
+  Media
+────────────────────────────────────────────────────*/
+@media (max-width: 1000px) {
+    :root {
+        --font-heading: 27px;
+        --font-large: 22px;
+        --font-medium: 20px;
+        --font-base: 18px;
+        --btn-width: 150px;
+        --btn-height: 45px;
+        --gallery-width: 100%;
+        --gallery-height: auto;
+    }
+    .left, .right {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .trip-content {
+        margin-left: 0;
+        max-width: 100%;
+    }
+    .free-gallery,
+    .budapest-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+    .gallery-left a:not(:first-child),
+    .gallery-right a:not(:first-child) {
+        display: none;
+    }
+    .gallery-left a:first-child,
+    .gallery-right a:first-child {
+        width: 95vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .centr {
+        flex-direction: column;
+        align-items: center;
+    }
+        .centr > a {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .centr p {
+            width: 100%;
+        }
+
+    .text-wrap,
+    .first,
+    .second,
+    .third,
+    .forth {
+        width: 100%;
+        float: none;
+        clip-path: none;
+        shape-outside: none;
+        aspect-ratio: auto;
+        margin: 0 auto var(--gap);
+    }
+
+    .dropdown-city:hover .dropdown-menu {
+        display: grid !important;
+        grid-template-columns: repeat(2, auto);
+        width: max-content;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: var(--border-radius);
+    }
+
+    .dropdown-item-city {
+        white-space: nowrap;
+        padding: var(--padding);
+        text-align: center;
+    }
+    /*---------------------------------*/
+    .carousel-container {
+        height: auto;
+    }
+
+    .carousel-slides {
+        flex-direction: row;
+    }
+
+    .slide {
+        height: 350px;
+    }
+
+    .placeholder {
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-nav {
+        gap: 0.5rem;
+    }
+        .carousel-nav label {
+            width: 10px;
+            height: 10px;
+        }
+}
